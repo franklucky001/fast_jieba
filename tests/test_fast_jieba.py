@@ -1,5 +1,5 @@
 import fast_jieba
-from fast_jieba.anlysis import extract_tags, textrank
+from fast_jieba.analyse import extract_tags, textrank
 
 words = fast_jieba.tokenize("小明就读北京清华大学物理系")
 print(words)
