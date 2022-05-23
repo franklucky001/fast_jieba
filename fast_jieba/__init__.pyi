@@ -1,6 +1,6 @@
 from typing import List, Tuple, Optional, Union
 
-def add_word(word: str, freq: Optional[float] = None, tag: Optional[str] = None):
+def add_word(word: str, freq: Optional[int] = None, tag: Optional[str] = None):
     ...
 
 def suggest_freq(segment: str):

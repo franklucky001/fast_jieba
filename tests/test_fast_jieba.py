@@ -1,6 +1,10 @@
 import fast_jieba
 from fast_jieba.analyse import extract_tags, textrank
 
+fast_jieba.add_word("就读", freq=10000, tag='v')
+ws = fast_jieba.posseg("小明就读于北京清华大学物理系")
+print(ws)
+print("***********")
 words = fast_jieba.tokenize("小明就读北京清华大学物理系")
 print(words)
 
