@@ -78,7 +78,5 @@ jobs:
       - name: Publish to Pypi
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.MATURIN_PYPI_TOKEN }}
-          PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
-          echo "pypi password $PYPI_PASSWORD secretes.password ${{ secrets.PYPI_PASSWORD }}"
-          maturin publish -u franklucky001 -p $PYPI_PASSWORD
+          maturin publish
