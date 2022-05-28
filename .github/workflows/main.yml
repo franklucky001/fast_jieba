@@ -79,4 +79,4 @@ jobs:
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.MATURIN_PYPI_TOKEN }}
         run: |
-          maturin publish
+          maturin publish --skip-existing
