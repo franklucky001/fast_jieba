@@ -58,8 +58,8 @@ jobs:
       - build
     steps:
       - uses: actions/download-artifact@v2
-          with:
-            name: wheels
+        with:
+          name: wheels
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
