@@ -29,10 +29,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - name: rust-cargo
+      - name: cargo-build
         uses: actions-rs/cargo@v1.0.1
         with:
-          command: test
+          command: build --release
       - name: py-deps
         run: |
           pip install --upgrade pip
@@ -40,9 +40,8 @@ jobs:
       - name: py-install
         run: |
           maturin build --release
-#          maturin publish
       - uses: actions/upload-artifact@v2
-        name: upload-wheel
+        name: python-wheels
         with:
           name: wheel-${{ matrix.platform }}
           path: target/wheels/
@@ -59,11 +58,16 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: wheels
-      - uses: actions/setup-python@v2
+          name: python-wheels
+          path: target/wheels/
+      - uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
+      - name: py-deps
+        run: |
+          pip install --upgrade pip
+          pip install cffi maturin wheel .
       - name: Publish to Pypi
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.MATURIN_PYPI_TOKEN }}
