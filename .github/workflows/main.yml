@@ -80,4 +80,4 @@ jobs:
           MATURIN_PYPI_TOKEN: ${{ secrets.MATURIN_PYPI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
-          maturin publish --pypi --pypi-token $MATURIN_PYPI_TOKEN
+          maturin publish
