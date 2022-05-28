@@ -56,11 +56,18 @@ jobs:
     needs:
       - build
     steps:
-      - uses: actions/download-artifact@v2
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Set Env
+        run: | 
+            echo "ACTIONS_ALLOW_UNSECURE_COMMANDS=true" >> $GITHUB_ENV
+      - name: download wheel
+        uses: actions/download-artifact@v2
         with:
-          name: python-wheels
+          name: wheel-${{ matrix.platform }}
           path: target/wheels/
-      - uses: actions/setup-python@v3
+      - name: setup python environment
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
