@@ -4,4 +4,6 @@ build-backend = "maturin"
 
 [project]
 name = "fast_jieba"
+description = "faster word segmentation tool, based on jieba_rs"
+repository = "https://github.com/franklucky001/fast_jieba"
 requires-python = ">=3.7"
