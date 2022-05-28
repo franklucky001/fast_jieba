@@ -32,7 +32,8 @@ jobs:
       - name: cargo-build
         uses: actions-rs/cargo@v1.0.1
         with:
-          command: build --release
+          command: build
+          args: --release
       - name: py-deps
         run: |
           pip install --upgrade pip
