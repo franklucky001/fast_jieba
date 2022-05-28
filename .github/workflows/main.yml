@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, macOS-latest, windows-latest]
-        python-version: ['3.7', '3.8', '3.9', '3.10']
+        python-version: ['3.8']
     runs-on: ${{ matrix.platform }}
 
     steps:
@@ -50,7 +50,7 @@ jobs:
     strategy:
       matrix:
         platform: [ ubuntu-latest, macOS-latest, windows-latest ]
-        python-version: [ '3.7', '3.8', '3.9', '3.10' ]
+        python-version: ['3.8' ]
     name: Release Python Whl
     runs-on: ${{ matrix.platform }}
     needs:
@@ -80,7 +80,4 @@ jobs:
           MATURIN_PYPI_TOKEN: ${{ secrets.MATURIN_PYPI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
-          python -m maturin publish --pypi --pypi-token $MATURIN_PYPI_TOKEN
-      - name: Publish to Github
-        run: |
-          python -m maturin publish --github --github-token $GITHUB_TOKEN
+          maturin publish --pypi --pypi-token $MATURIN_PYPI_TOKEN
