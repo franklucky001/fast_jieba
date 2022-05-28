@@ -13,7 +13,7 @@ def load_dict(path: str):
 def cut(text: str, hmm:bool = True, cut_all:bool = False) -> List[str]:
     ...
 
-def batch_cut(texts: List[str], hmm:bool = True, cut_all:bool = False) -> List[List[str]]
+def batch_cut(texts: List[str], hmm:bool = True, cut_all:bool = False) -> List[List[str]]:
     ...
 
 def cut_for_search(text:str, hmm:bool = True) -> List[str]:
