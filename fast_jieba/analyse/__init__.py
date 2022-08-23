@@ -21,8 +21,8 @@ def extract_tags(text, topK=20, withWeight=False, allowPos=()):
 
 
 def set_stopwords(stopwords):
-    _TFIDF.set_stop_words(stopwords)
-    _TextRank.set_stop_words(stopwords)
+    _TFIDF.set_stopwords(stopwords)
+    _TextRank.set_stopwords(stopwords)
 
 
 def load_stopwords(stopwords_file):
@@ -31,13 +31,13 @@ def load_stopwords(stopwords_file):
             add_stop_word(line.strip())
 
 
-def add_stop_word(word):
-    _TFIDF.add_stop_word(word)
-    _TextRank.add_stop_word(word)
+def add_stopword(word):
+    _TFIDF.add_stopword(word)
+    _TextRank.add_stopword(word)
 
 
-def remove_stop_word(word):
-    _TFIDF.remove_stop_word(word)
-    _TextRank.remove_stop_word(word)
+def remove_stopword(word):
+    _TFIDF.remove_stopword(word)
+    _TextRank.remove_stopword(word)
 
 

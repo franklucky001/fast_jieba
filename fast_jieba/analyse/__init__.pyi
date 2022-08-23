@@ -17,11 +17,11 @@ def load_stopwords(stopwords_file: str):
     ...
 
 
-def add_stop_word(word: str):
+def add_stopword(word: str):
     ...
 
 
-def remove_stop_word(word: str):
+def remove_stopword(word: str):
     ...
 
 
